@@ -1,8 +1,15 @@
 #!/bin/bash
 set -e
 
-PROJECT_ID="your_gcp_project"
-REGION="southamerica-east1"
+# Load .env if it exists
+if [ -f .env ]; then
+  set -o allexport
+  source .env
+  set +o allexport
+fi
+
+: "${PROJECT_ID:?PROJECT_ID is not set. Define it in .env or the environment}"
+: "${REGION:?REGION is not set. Define it in .env or the environment}"
 
 # https://docs.cloud.google.com/bigquery/docs/locations
 
@@ -12,3 +19,5 @@ REGION="southamerica-east1"
 npm i -g @dataform/cli@^3.0.0-beta
 
 dataform init . ${PROJECT_ID} ${REGION}
+
+dataform init-creds
