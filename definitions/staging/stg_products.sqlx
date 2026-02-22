@@ -1,0 +1,144 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "Hardcoded seed data for the product catalog used in the e-commerce model."
+}
+
+WITH raw_products AS (
+  SELECT
+    101             AS product_id,
+    'Wireless Mouse'    AS product_name,
+    'Electronics'       AS category,
+    'Peripherals'       AS subcategory,
+    89.90            AS unit_price,
+    35.00            AS cost,
+    'Logitech'       AS brand
+  UNION ALL
+  SELECT
+    102,
+    'Mechanical Keyboard',
+    'Electronics',
+    'Peripherals',
+    349.90,
+    120.00,
+    'Keychron'
+  UNION ALL
+  SELECT
+    103,
+    'USB-C Hub 7-in-1',
+    'Electronics',
+    'Accessories',
+    199.90,
+    70.00,
+    'Anker'
+  UNION ALL
+  SELECT
+    104,
+    'Monitor 27" 4K',
+    'Electronics',
+    'Monitors',
+    2499.00,
+    1100.00,
+    'LG'
+  UNION ALL
+  SELECT
+    105,
+    'Noise Cancelling Headphones',
+    'Electronics',
+    'Audio',
+    899.00,
+    380.00,
+    'Sony'
+  UNION ALL
+  SELECT
+    106,
+    'Webcam 1080p',
+    'Electronics',
+    'Peripherals',
+    299.90,
+    95.00,
+    'Logitech'
+  UNION ALL
+  SELECT
+    107,
+    'Standing Desk',
+    'Furniture',
+    'Desks',
+    1799.00,
+    750.00,
+    'Flexispot'
+  UNION ALL
+  SELECT
+    108,
+    'Ergonomic Chair',
+    'Furniture',
+    'Chairs',
+    2100.00,
+    870.00,
+    'Herman Miller'
+  UNION ALL
+  SELECT
+    109,
+    'Laptop Stand',
+    'Furniture',
+    'Accessories',
+    149.90,
+    45.00,
+    'Rain Design'
+  UNION ALL
+  SELECT
+    110,
+    'Cable Management Kit',
+    'Furniture',
+    'Accessories',
+    59.90,
+    18.00,
+    'IKEA'
+  UNION ALL
+  SELECT
+    111,
+    'Python Programming Book',
+    'Books',
+    'Programming',
+    79.90,
+    25.00,
+    'OReilly'
+  UNION ALL
+  SELECT
+    112,
+    'SQL for Data Analysis',
+    'Books',
+    'Programming',
+    69.90,
+    22.00,
+    'OReilly'
+  UNION ALL
+  SELECT
+    113,
+    'Designing Data-Intensive Applications',
+    'Books',
+    'Engineering',
+    95.00,
+    30.00,
+    'OReilly'
+  UNION ALL
+  SELECT
+    114,
+    'Deskpad XXL',
+    'Accessories',
+    'Desk Accessories',
+    129.90,
+    40.00,
+    'Grovemade'
+  UNION ALL
+  SELECT
+    115,
+    'Stream Deck MK.2',
+    'Electronics',
+    'Peripherals',
+    649.00,
+    270.00,
+    'Elgato'
+)
+
+SELECT * FROM raw_products
