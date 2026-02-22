@@ -1,0 +1,209 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "Hardcoded seed data for customer orders. Each order references a customer_id from stg_customers."
+}
+
+WITH raw_orders AS (
+  SELECT
+    1001           AS order_id,
+    1              AS customer_id,
+    DATE '2023-01-05' AS order_date,
+    'delivered'    AS status,
+    'São Paulo'    AS shipping_city,
+    'SP'           AS shipping_state,
+    'credit_card'  AS payment_method,
+    0.00           AS discount_pct
+  UNION ALL
+  SELECT
+    1002,
+    3,
+    DATE '2023-01-12',
+    'delivered',
+    'Belo Horizonte',
+    'MG',
+    'pix',
+    5.00
+  UNION ALL
+  SELECT
+    1003,
+    7,
+    DATE '2023-02-01',
+    'delivered',
+    'Fortaleza',
+    'CE',
+    'boleto',
+    0.00
+  UNION ALL
+  SELECT
+    1004,
+    2,
+    DATE '2023-02-14',
+    'delivered',
+    'Rio de Janeiro',
+    'RJ',
+    'credit_card',
+    10.00
+  UNION ALL
+  SELECT
+    1005,
+    10,
+    DATE '2023-03-03',
+    'delivered',
+    'Brasília',
+    'DF',
+    'pix',
+    0.00
+  UNION ALL
+  SELECT
+    1006,
+    5,
+    DATE '2023-03-20',
+    'shipped',
+    'Porto Alegre',
+    'RS',
+    'credit_card',
+    0.00
+  UNION ALL
+  SELECT
+    1007,
+    13,
+    DATE '2023-04-08',
+    'delivered',
+    'Maceió',
+    'AL',
+    'pix',
+    8.00
+  UNION ALL
+  SELECT
+    1008,
+    1,
+    DATE '2023-04-25',
+    'delivered',
+    'São Paulo',
+    'SP',
+    'credit_card',
+    15.00
+  UNION ALL
+  SELECT
+    1009,
+    6,
+    DATE '2023-05-11',
+    'cancelled',
+    'Salvador',
+    'BA',
+    'boleto',
+    0.00
+  UNION ALL
+  SELECT
+    1010,
+    4,
+    DATE '2023-05-28',
+    'delivered',
+    'Curitiba',
+    'PR',
+    'pix',
+    5.00
+  UNION ALL
+  SELECT
+    1011,
+    9,
+    DATE '2023-06-15',
+    'delivered',
+    'Recife',
+    'PE',
+    'credit_card',
+    0.00
+  UNION ALL
+  SELECT
+    1012,
+    11,
+    DATE '2023-07-02',
+    'shipped',
+    'Belém',
+    'PA',
+    'pix',
+    0.00
+  UNION ALL
+  SELECT
+    1013,
+    14,
+    DATE '2023-07-19',
+    'delivered',
+    'Natal',
+    'RN',
+    'credit_card',
+    10.00
+  UNION ALL
+  SELECT
+    1014,
+    8,
+    DATE '2023-08-06',
+    'delivered',
+    'Manaus',
+    'AM',
+    'boleto',
+    0.00
+  UNION ALL
+  SELECT
+    1015,
+    12,
+    DATE '2023-08-23',
+    'processing',
+    'Goiânia',
+    'GO',
+    'pix',
+    5.00
+  UNION ALL
+  SELECT
+    1016,
+    15,
+    DATE '2023-09-10',
+    'delivered',
+    'Campo Grande',
+    'MS',
+    'credit_card',
+    0.00
+  UNION ALL
+  SELECT
+    1017,
+    2,
+    DATE '2023-09-27',
+    'delivered',
+    'Rio de Janeiro',
+    'RJ',
+    'pix',
+    12.00
+  UNION ALL
+  SELECT
+    1018,
+    7,
+    DATE '2023-10-14',
+    'shipped',
+    'Fortaleza',
+    'CE',
+    'credit_card',
+    0.00
+  UNION ALL
+  SELECT
+    1019,
+    1,
+    DATE '2023-11-01',
+    'delivered',
+    'São Paulo',
+    'SP',
+    'pix',
+    20.00
+  UNION ALL
+  SELECT
+    1020,
+    10,
+    DATE '2023-11-18',
+    'delivered',
+    'Brasília',
+    'DF',
+    'credit_card',
+    0.00
+)
+
+SELECT * FROM raw_orders

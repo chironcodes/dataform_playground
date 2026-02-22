@@ -1,0 +1,174 @@
+config {
+  type: "view",
+  schema: "staging",
+  description: "Hardcoded seed data for customers used as the base dimension in the e-commerce model."
+}
+
+WITH raw_customers AS (
+  SELECT
+    1        AS customer_id,
+    'Alice'  AS first_name,
+    'Santos' AS last_name,
+    'alice.santos@email.com' AS email,
+    'São Paulo'  AS city,
+    'SP'         AS state,
+    'Brazil'     AS country,
+    DATE '2021-03-10' AS signup_date,
+    'gold'       AS tier
+  UNION ALL
+  SELECT
+    2,
+    'Bruno',
+    'Oliveira',
+    'bruno.oliveira@email.com',
+    'Rio de Janeiro',
+    'RJ',
+    'Brazil',
+    DATE '2021-06-22',
+    'silver'
+  UNION ALL
+  SELECT
+    3,
+    'Carla',
+    'Mendes',
+    'carla.mendes@email.com',
+    'Belo Horizonte',
+    'MG',
+    'Brazil',
+    DATE '2021-09-05',
+    'bronze'
+  UNION ALL
+  SELECT
+    4,
+    'Diego',
+    'Ferreira',
+    'diego.ferreira@email.com',
+    'Curitiba',
+    'PR',
+    'Brazil',
+    DATE '2022-01-14',
+    'gold'
+  UNION ALL
+  SELECT
+    5,
+    'Elena',
+    'Costa',
+    'elena.costa@email.com',
+    'Porto Alegre',
+    'RS',
+    'Brazil',
+    DATE '2022-03-30',
+    'silver'
+  UNION ALL
+  SELECT
+    6,
+    'Felipe',
+    'Rocha',
+    'felipe.rocha@email.com',
+    'Salvador',
+    'BA',
+    'Brazil',
+    DATE '2022-05-18',
+    'bronze'
+  UNION ALL
+  SELECT
+    7,
+    'Gabriela',
+    'Lima',
+    'gabriela.lima@email.com',
+    'Fortaleza',
+    'CE',
+    'Brazil',
+    DATE '2022-07-02',
+    'gold'
+  UNION ALL
+  SELECT
+    8,
+    'Henrique',
+    'Alves',
+    'henrique.alves@email.com',
+    'Manaus',
+    'AM',
+    'Brazil',
+    DATE '2022-08-19',
+    'silver'
+  UNION ALL
+  SELECT
+    9,
+    'Isabela',
+    'Nunes',
+    'isabela.nunes@email.com',
+    'Recife',
+    'PE',
+    'Brazil',
+    DATE '2022-10-07',
+    'bronze'
+  UNION ALL
+  SELECT
+    10,
+    'João',
+    'Barbosa',
+    'joao.barbosa@email.com',
+    'Brasília',
+    'DF',
+    'Brazil',
+    DATE '2022-12-01',
+    'gold'
+  UNION ALL
+  SELECT
+    11,
+    'Karina',
+    'Souza',
+    'karina.souza@email.com',
+    'Belém',
+    'PA',
+    'Brazil',
+    DATE '2023-01-25',
+    'silver'
+  UNION ALL
+  SELECT
+    12,
+    'Lucas',
+    'Martins',
+    'lucas.martins@email.com',
+    'Goiânia',
+    'GO',
+    'Brazil',
+    DATE '2023-03-11',
+    'bronze'
+  UNION ALL
+  SELECT
+    13,
+    'Marina',
+    'Correia',
+    'marina.correia@email.com',
+    'Maceió',
+    'AL',
+    'Brazil',
+    DATE '2023-05-20',
+    'gold'
+  UNION ALL
+  SELECT
+    14,
+    'Nathan',
+    'Pereira',
+    'nathan.pereira@email.com',
+    'Natal',
+    'RN',
+    'Brazil',
+    DATE '2023-07-08',
+    'silver'
+  UNION ALL
+  SELECT
+    15,
+    'Olivia',
+    'Cardoso',
+    'olivia.cardoso@email.com',
+    'Campo Grande',
+    'MS',
+    'Brazil',
+    DATE '2023-09-14',
+    'bronze'
+)
+
+SELECT * FROM raw_customers
